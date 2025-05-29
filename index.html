@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meet the beKNOWN15 Content Team</title>
+  <style>
+  body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #fceaff, #e0f7fa);
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .gallery img:hover {
+    transform: scale(1.03);
+  }
+
+  .featured {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+</style>
+
+</head>
+<body>
+  <h1>Meet the beKNOWN15 Content Team</h1>
+<p>Click on the picture to reveal which Stitch is in the Content Team</p>
+
+<div class="gallery">
+  <img id="img1" src="images/1A.png" onclick="swapImage('img1', '1A.png', '1B.png')" />
+  <img id="img2" src="images/1A.png" onclick="swapImage('img2', '1A.png', '2B.png')" />
+  <img id="img3" src="images/1A.png" onclick="swapImage('img3', '1A.png', '3B.png')" />
+  <img id="img4" src="images/1A.png" onclick="swapImage('img4', '1A.png', '4B.png')" />
+  <img id="img5" src="images/1A.png" onclick="swapImage('img5', '1A.png', '5B.png')" />
+  <img id="img6" src="images/1A.png" onclick="swapImage('img6', '1A.png', '6B.png')" />
+  <img id="img7" class="featured" src="images/7A.png" onclick="swapImage('img7', '7A.png', '7B.png')" />
+</div>
+
+
+  <script>
+    function swapImage(id, labelA, labelB) {
+      const img = document.getElementById(id);
+      const current = img.src.includes(labelA) ? labelB : labelA;
+      img.src = `images/${current}`;
+    }
+  </script>
+</body>
+</html>
